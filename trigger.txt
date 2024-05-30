@@ -1,0 +1,34 @@
+-- TRIGGERS (ChatGPT utilisé pour cela) (a mettre dans rapport, on a pas vu ca en cours)--
+CREATE OR REPLACE FUNCTION set_default_pseudo()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.pseudo IS NULL THEN NEW.pseudo := 'utilisateur#' || NEW.u_id;
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+CREATE TRIGGER before_insert_set_default_pseudo
+BEFORE INSERT ON Utilisateur
+FOR EACH ROW
+EXECUTE FUNCTION 
+set_default_pseudo();
+
+CREATE OR REPLACE FUNCTION check_symmetric_friendship()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Vérifier si l'ami inverse existe déjà
+    IF EXISTS (
+        SELECT 1
+        FROM Amis
+        WHERE u_id1 = NEW.u_id2 AND u_id2 = NEW.u_id1
+    ) THEN
+        RAISE EXCEPTION 'Cannot insert (%, %) because the tuple (%, %) already exists', NEW.u_id1, NEW.u_id2, NEW.u_id2, NEW.u_id1;
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+CREATE TRIGGER before_insert_check_symmetric_friendship
+BEFORE INSERT ON Amis
+FOR EACH ROW
+EXECUTE FUNCTION check_symmetric_friendship();

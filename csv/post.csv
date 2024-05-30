@@ -1,0 +1,11 @@
+posteePar,f_id,date_de_post,texte
+1,1,2023-01-01 10:00:00,First post about Action Movie.
+2,2,2023-02-01 11:00:00,First post about Drama Movie.
+3,3,2023-03-01 12:00:00,First post about Comedy Movie.
+4,4,2023-04-01 13:00:00,First post about Horror Movie.
+5,5,2023-05-01 14:00:00,First post about Romance Movie.
+6,6,2023-06-01 15:00:00,First post about Thriller Movie.
+7,7,2023-07-01 16:00:00,First post about Sci-Fi Movie.
+8,8,2023-08-01 17:00:00,First post about Fantasy Movie.
+9,9,2023-09-01 18:00:00,First post about Documentary.
+10,10,2023-10-01 19:00:00,First post about Adventure Movie.

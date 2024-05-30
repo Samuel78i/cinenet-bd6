@@ -1,0 +1,11 @@
+pseudo,email,u_role,mdp,nom,prenom,naissance,date_de_creation,lieu
+jdoe,jdoe@example.com,user,password123,Doe,John,1990-01-01,,
+asmith,asmith@example.com,acteur,password123,Smith,Alice,1985-05-14,,
+bcorp,bcorp@example.com,entreprise,password123,Corp,,,2000-03-30,New York
+jdoe2,jdoe2@example.com,organisateur,password123,Doe2,John2,1990-01-01,,
+mjohnson,mjohnson@example.com,user,password123,Johnson,Mark,1992-03-22,,
+sjackson,sjackson@example.com,acteur,password123,Jackson,Sara,1987-08-15,,
+dwilliams,dwilliams@example.com,user,password123,Williams,David,1995-07-19,,
+croberts,croberts@example.com,organisateur,password123,Roberts,Clara,1998-11-30,,
+mjones,mjones@example.com,user,password123,Jones,Michael,1991-09-05,,
+klee,klee@example.com,acteur,password123,Lee,Kim,1986-12-25,,
